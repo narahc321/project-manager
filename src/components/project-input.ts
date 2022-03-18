@@ -1,8 +1,7 @@
-import { Component } from "./base-component.js";
-import { Validatable, validate } from "../util/validation.js";
-import { autobind } from "../decorators/autobind.js";
-import { projectState } from "../state/project-state.js";
-
+import { Component } from './base-component';
+import { Validatable, validate } from '../util/validation';
+import { autobind } from '../decorators/autobind';
+import { projectState } from '../state/project-state';
 
 // Project InputClass
 export class ProjectInput extends Component<HTMLDivElement, HTMLFormElement> {
@@ -11,16 +10,16 @@ export class ProjectInput extends Component<HTMLDivElement, HTMLFormElement> {
   peopleInputElement: HTMLInputElement;
 
   constructor() {
-    super("project-input", "app", true, "user-input");
+    super('project-input', 'app', true, 'user-input');
 
     this.titleInputElement = this.element.querySelector(
-      "#title"
+      '#title'
     ) as HTMLInputElement;
     this.descriptionInputElement = this.element.querySelector(
-      "#description"
+      '#description'
     ) as HTMLInputElement;
     this.peopleInputElement = this.element.querySelector(
-      "#people"
+      '#people'
     ) as HTMLInputElement;
 
     this.configure();
@@ -54,7 +53,7 @@ export class ProjectInput extends Component<HTMLDivElement, HTMLFormElement> {
       !validate(descriptionValidatable) ||
       !validate(peopleValidatable)
     ) {
-      alert("Invalid Input, please try again!");
+      alert('Invalid Input, please try again!');
       return;
     } else {
       return [enteredTitle, enteredDescription, +enterdPeople];
@@ -62,15 +61,15 @@ export class ProjectInput extends Component<HTMLDivElement, HTMLFormElement> {
   }
 
   configure() {
-    this.element.addEventListener("submit", this.submitHandler);
+    this.element.addEventListener('submit', this.submitHandler);
   }
 
   renderContent(): void {}
 
   private clearInputs() {
-    this.titleInputElement.value = "";
-    this.descriptionInputElement.value = "";
-    this.peopleInputElement.value = "";
+    this.titleInputElement.value = '';
+    this.descriptionInputElement.value = '';
+    this.peopleInputElement.value = '';
   }
 
   @autobind

@@ -10,4 +10,3 @@ export interface DragTarget {
   dropHandler(event: DragEvent): void;
   dragLeaveHandler(event: DragEvent): void;
 }
-

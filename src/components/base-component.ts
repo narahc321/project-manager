@@ -1,5 +1,3 @@
-
-
 // Component Base Class
 export abstract class Component<T extends HTMLElement, U extends HTMLElement> {
   templateElement: HTMLTemplateElement;
@@ -28,7 +26,7 @@ export abstract class Component<T extends HTMLElement, U extends HTMLElement> {
 
   private attach(insertAtStart: boolean) {
     this.hostElement.insertAdjacentElement(
-      insertAtStart ? "afterbegin" : "beforeend",
+      insertAtStart ? 'afterbegin' : 'beforeend',
       this.element
     );
   }
