@@ -12,7 +12,7 @@
     "typescript",
     "course"
   ],
-  "author": "Sai Charan teja",
+  "author": "Sai Charan Teja",
   "license": "ISC",
   "devDependencies": {
     "clean-webpack-plugin": "^4.0.0",
